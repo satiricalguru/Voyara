@@ -1,0 +1,106 @@
+/* ─────────────────────────────────────────────────────────────
+   VOYARA · design tokens — "atmospheric" system
+   After Heart Aerospace: monumental type drifting through
+   cloud-level skies. Light canvas, onyx-navy ink, a light-blue
+   sky gradient for atmospheric bands, one Jetstream blue for
+   outlined actions, zero radius everywhere, no shadows.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Colour — semantic */
+  --ink: #0a1424; /* primary text, structural lines */
+  --canvas: #ffffff; /* page */
+  --surface: #eaf2fa; /* the one tinted panel step */
+  --line: #d3e0ec; /* hairlines & borders */
+  --mute: #8aa2bb; /* secondary structure */
+  --accent: #001489; /* Jetstream — outlined actions, links, tags */
+  --pure-black: #000;
+
+  /* Sky — the atmospheric bands */
+  --sky-top: #6f9fd0;
+  --sky-mid: #a9cbec;
+  --sky-low: #dcebf8;
+  --sky: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 38%, var(--sky-low) 72%, #ffffff 100%);
+  --sky-soft: linear-gradient(180deg, #dcebf8 0%, #f4f9fd 55%, #ffffff 100%);
+  --onyx: #050a14;
+
+  /* Tints of ink */
+  --ink-72: rgb(10 20 36 / 0.72);
+  --ink-56: rgb(10 20 36 / 0.58);
+  --ink-40: rgb(10 20 36 / 0.42);
+  --ink-12: rgb(10 20 36 / 0.1);
+  --ink-06: rgb(10 20 36 / 0.045);
+  --canvas-80: rgb(255 255 255 / 0.82);
+  --canvas-60: rgb(255 255 255 / 0.62);
+  --surface-60: rgb(234 242 250 / 0.6);
+
+  /* Type */
+  --font: 'Inter Tight', 'Inter', 'Neue Haas Grotesk', 'Helvetica Neue', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-legal: Arial, system-ui, sans-serif;
+  --text-legal: 9px;
+  --text-micro: 11px;
+  --text-label: 14px;
+  --text-ui: 15px;
+  --text-ui-lg: 16px;
+  --text-sub: 18px;
+  --text-heading-sm: clamp(20px, 1vw + 12px, 26px);
+  --text-body: clamp(18px, 0.9vw + 11px, 24px);
+  --text-heading: clamp(32px, 2.6vw + 12px, 48px);
+  --text-display: clamp(44px, 5vw + 12px, 96px);
+  --text-mega: clamp(96px, 19vw, 320px);
+  --leading-display: 0.96;
+  --leading-body: 1.3;
+  --track-display: -0.035em;
+  --track-body: -0.01em;
+
+  /* Space */
+  --s-6: 6px;
+  --s-8: 8px;
+  --s-9: 9px;
+  --s-10: 10px;
+  --s-12: 12px;
+  --s-14: 14px;
+  --s-18: 18px;
+  --s-24: 24px;
+  --s-31: 32px;
+  --s-41: 40px;
+  --s-45: 46px;
+  --s-68: 70px;
+  --s-120: clamp(70px, 9vw, 140px);
+  --s-204: clamp(96px, 14vw, 204px);
+  --gutter: clamp(16px, 2.8vw, 40px);
+  --gap: 20px;
+
+  /* Shape — every corner is sharp */
+  --r-card: 0px;
+  --r-ghost: 0px;
+  --r-pill: 0px;
+  --r-full: 9999px; /* only for dots, pins and avatars */
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --t-fast: 160ms;
+  --t-med: 420ms;
+  --t-slow: 900ms;
+
+  --nav-h: 68px;
+  color-scheme: light;
+}
+
+/* White-on-atmosphere scope: photo heroes, sky bands, the onyx footer, the boarding pass. */
+.inverse {
+  --ink: #ffffff;
+  --ink-72: rgb(255 255 255 / 0.8);
+  --ink-56: rgb(255 255 255 / 0.68);
+  --ink-40: rgb(255 255 255 / 0.5);
+  --ink-12: rgb(255 255 255 / 0.18);
+  --ink-06: rgb(255 255 255 / 0.08);
+  --canvas: #050a14;
+  --canvas-80: rgb(5 10 20 / 0.55);
+  --canvas-60: rgb(5 10 20 / 0.35);
+  --line: rgb(255 255 255 / 0.32);
+  --mute: rgb(255 255 255 / 0.55);
+  --accent: #ffffff;
+  --surface: rgb(255 255 255 / 0.14);
+  color: var(--ink);
+  color-scheme: dark;
+}

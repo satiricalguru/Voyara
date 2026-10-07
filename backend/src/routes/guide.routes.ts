@@ -1,0 +1,21 @@
+import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
+import * as c from '../controllers/guide.controller.js';
+import { optionalAuth } from '../middlewares/auth.js';
+import { validate } from '../middlewares/validate.js';
+import { itineraryRequestSchema, routeRequestSchema } from '../validators/schemas.js';
+
+const heavy = rateLimit({ windowMs: 60_000, limit: 12, message: { message: 'The architect needs a breather — try again in a minute' } });
+const r = Router();
+r.post('/itinerary', heavy, optionalAuth, validate(itineraryRequestSchema), c.generateItinerary);
+r.post('/route', heavy, optionalAuth, validate(routeRequestSchema), c.generateRoute);
+r.get('/reverse', c.reverse);
+r.get('/geocode', c.geocodeSearch);
+r.get('/destinations', c.destinations);
+r.get('/destination', c.destinationOverview);
+r.get('/live/rentals', c.liveRentals);
+r.get('/live/stays', c.liveStays);
+r.get('/live/pois', c.livePois);
+r.get('/live/weather', c.liveWeather);
+r.get('/status', c.status);
+export default r;

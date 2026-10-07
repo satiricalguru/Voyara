@@ -1,0 +1,22 @@
+# dependencies & builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# secrets — copy the .env.example files instead
+.env
+.env.*
+!.env.example
+
+# runtime uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# local tooling
+.claude/

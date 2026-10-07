@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Voyara — describe it once, travel all of it">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f9fd0"/>
+      <stop offset=".55" stop-color="#a9cbec"/>
+      <stop offset="1" stop-color="#eef5fc"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3dc9a"/>
+      <stop offset=".45" stop-color="#c9a04e"/>
+      <stop offset="1" stop-color="#8f6a22"/>
+    </linearGradient>
+    <radialGradient id="puff" cx=".5" cy=".55" r=".5">
+      <stop offset="0" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset=".7" stop-color="#fff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <g id="cloud">
+      <ellipse cx="0" cy="0" rx="120" ry="42" fill="url(#puff)"/>
+      <ellipse cx="-60" cy="10" rx="80" ry="34" fill="url(#puff)"/>
+      <ellipse cx="70" cy="12" rx="90" ry="36" fill="url(#puff)"/>
+      <ellipse cx="10" cy="-22" rx="70" ry="36" fill="url(#puff)"/>
+    </g>
+    <!-- airliner silhouette, nose right -->
+    <g id="jet">
+      <path d="M-70 0 C-40 -9 40 -10 62 -6 C74 -4 80 -1 80 1 C80 3 74 5 62 6 C40 9 -40 8 -70 4 Z" fill="#fff"/>
+      <path d="M-58 -2 L-74 -30 L-62 -30 L-38 -4 Z" fill="#c9a04e"/>
+      <path d="M-6 2 L-30 30 L-16 30 L22 4 Z" fill="#e6edf5"/>
+      <path d="M-60 2 L-74 12 L-66 12 L-48 3 Z" fill="#e6edf5"/>
+      <ellipse cx="-4" cy="10" rx="10" ry="4" fill="#dfe6ee"/>
+      <path d="M-40 -3 H44" stroke="#0a1424" stroke-width="1.6" stroke-dasharray="2 3" opacity=".55"/>
+      <text x="6" y="-1.2" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="7.5" fill="url(#gold)">Voyara</text>
+    </g>
+    <style>
+      .drift1 { animation: drift 38s linear infinite; }
+      .drift2 { animation: drift 54s linear infinite; animation-delay: -20s; }
+      .drift3 { animation: drift 70s linear infinite; animation-delay: -45s; }
+      @keyframes drift { from { transform: translateX(1400px); } to { transform: translateX(-400px); } }
+      .route { stroke-dasharray: 6 9; animation: dash 1.6s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -30; } }
+      .word { opacity: 0; animation: rise 1.4s cubic-bezier(.2,.7,.1,1) .2s forwards; }
+      @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+      .tag { clip-path: inset(0 100% 0 0); animation: type 2.6s steps(44) 1.2s forwards; }
+      @keyframes type { to { clip-path: inset(0 0 0 0); } }
+      .pin { animation: pulse 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes pulse { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(3.2); } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#sky)"/>
+  <g class="drift3" opacity=".55"><use href="#cloud" x="0" y="300" transform="scale(1.4)"/></g>
+  <g class="drift2" opacity=".7"><use href="#cloud" x="0" y="250"/></g>
+  <g class="drift1" opacity=".9"><use href="#cloud" x="0" y="330"/></g>
+
+  <!-- route -->
+  <path id="arc" d="M120 300 Q 620 150 1080 255" fill="none" stroke="#001489" stroke-width="2" class="route" opacity=".7"/>
+  <circle cx="120" cy="300" r="6" fill="#001489"/><circle cx="120" cy="300" r="6" fill="none" stroke="#001489" class="pin"/>
+  <circle cx="1080" cy="255" r="6" fill="#001489"/><circle cx="1080" cy="255" r="6" fill="none" stroke="#001489" class="pin"/>
+  <text x="120" y="332" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#0a1424">MUMBAI · BOM</text>
+  <text x="1080" y="287" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#0a1424">LISBON · LIS</text>
+
+  <g>
+    <use href="#jet" transform="scale(1.6)"/>
+    <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1">
+      <mpath href="#arc"/>
+    </animateMotion>
+  </g>
+
+  <g class="word">
+    <text x="60" y="140" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="120" letter-spacing="-6" fill="#fff">Voyara</text>
+  </g>
+  <g class="tag">
+    <text x="64" y="178" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#fff" opacity=".95">Describe it once. Travel all of it.  ✈  the whole-trip AI travel architect</text>
+  </g>
+</svg>
