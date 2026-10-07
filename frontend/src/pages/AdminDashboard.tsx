@@ -65,7 +65,7 @@ function Overview() {
   if (loading || !data) return <div className="grid-4">{Array.from({ length: 8 }, (_, i) => <div key={i} className="skeleton" style={{ height: 120 }} />)}</div>;
   const t = data.totals;
   const tiles: [string, string, string?][] = [
-    ['Revenue', money(t.revenue), `${money(t.revenueThisMonth)} this month`],
+    ['Revenue', `₹${compact(t.revenue)}`, `${money(t.revenue)} total · ${money(t.revenueThisMonth)} this month`],
     ['Bookings', String(t.bookings), `${t.checkedIn} in house now`],
     ['Occupancy tonight', `${t.occupancy}%`, `${t.rooms} rooms across ${t.hotels} hotels`],
     ['Travellers', String(t.users), `${t.subscribers} newsletter subscribers`],
@@ -80,7 +80,7 @@ function Overview() {
         {tiles.map(([l, v, s]) => (
           <div key={l} className="stat">
             <span className="micro dim">{l}</span>
-            <span className="display tabular">{v}</span>
+            <span className="stat-value tabular">{v}</span>
             {s && <span className="micro dim">{s}</span>}
           </div>
         ))}

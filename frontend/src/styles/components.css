@@ -785,6 +785,9 @@ a:hover .media img,
 .lines > span {
   display: block;
   overflow: hidden;
+  /* room for descenders (g, y, p) under the tight display leading */
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
 }
 .lines > span > span {
   display: block;

@@ -977,3 +977,17 @@
   padding-top: 6px;
   margin-top: 6px;
 }
+
+/* Admin stat tiles: values must fit their cell (₹ crore figures are long) */
+.stat {
+  min-width: 0;
+}
+.stat-value {
+  font-size: clamp(26px, 1.6vw + 14px, 44px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

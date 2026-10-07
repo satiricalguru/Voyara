@@ -77,7 +77,7 @@ export default function BookingConfirmation() {
           <div className="ticket-top">
             <div className="stack-sm">
               <span className="micro">Reference</span>
-              <span className="display tabular">{b.reference}</span>
+              <span className="heading tabular">{b.reference}</span>
             </div>
             <QR value={`${window.location.origin}/bookings/${b.reference}`} size={150} />
           </div>

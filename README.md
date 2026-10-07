@@ -86,30 +86,34 @@ Scrolling the homepage *types* a trip and the product answers, step by step.
 
 ## 🖼 &nbsp;Screens
 
-<table>
-  <tr>
-    <td width="50%"><img src="docs/screens/10-trip-hero.jpg" alt="Multi-city trip" /><p align="center"><sub><b>Multi-city trip</b> — route strip, flight legs, cost & FX</sub></p></td>
-    <td width="50%"><img src="docs/screens/11-trip-days.jpg" alt="Day by day" /><p align="center"><sub><b>Day by day</b> — timeline, live map, rain plans</sub></p></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screens/12-hotel.jpg" alt="Hotel page" /><p align="center"><sub><b>Hotel</b> — gallery, live rooms, add-ons, coupons, quote</sub></p></td>
-    <td><img src="docs/screens/13-explore.jpg" alt="Explore stays" /><p align="center"><sub><b>Stays</b> — dates, guests, filters, map view</sub></p></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screens/14-ticket.jpg" alt="Booking confirmation" /><p align="center"><sub><b>Confirmation</b> — boarding-pass ticket, QR, PDF invoice</sub></p></td>
-    <td><img src="docs/screens/16-admin.jpg" alt="Admin console" /><p align="center"><sub><b>Admin</b> — revenue, occupancy, status, top hotels</sub></p></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screens/15-staff.jpg" alt="Front desk" /><p align="center"><sub><b>Front desk</b> — arrivals, departures, in-house</sub></p></td>
-    <td>
-      <table><tr>
-        <td><img src="docs/screens/17-mobile-hero.jpg" alt="Mobile hero" /></td>
-        <td><img src="docs/screens/18-mobile-globe.jpg" alt="Mobile globe" /></td>
-      </tr></table>
-      <p align="center"><sub><b>Mobile</b> — every page, zero sideways scroll</sub></p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/screens/10-trip-hero.jpg" alt="Multi-city trip — route strip, flight legs, cost and FX" width="48%" />
+  &nbsp;
+  <img src="docs/screens/11-trip-days.jpg" alt="Day by day — timeline, live map, rain plans" width="48%" />
+  <br/><sub><b>Multi-city trip</b> — route strip, flight legs, cost & FX &nbsp;·&nbsp; <b>Day by day</b> — timeline, live map, rain plans</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screens/12-hotel.jpg" alt="Hotel — gallery, live rooms, add-ons, coupons, quote" width="48%" />
+  &nbsp;
+  <img src="docs/screens/13-explore.jpg" alt="Stays — dates, guests, filters, map view" width="48%" />
+  <br/><sub><b>Hotel</b> — gallery, live rooms, add-ons, coupons, quote &nbsp;·&nbsp; <b>Stays</b> — dates, guests, filters, map</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screens/14-ticket.jpg" alt="Confirmation — boarding-pass ticket, QR, PDF invoice" width="48%" />
+  &nbsp;
+  <img src="docs/screens/16-admin.jpg" alt="Admin — revenue, occupancy, status, top hotels" width="48%" />
+  <br/><sub><b>Confirmation</b> — boarding-pass ticket, QR, PDF invoice &nbsp;·&nbsp; <b>Admin</b> — revenue, occupancy, status</sub>
+</p>
+
+<p align="center">
+  <img src="docs/screens/15-staff.jpg" alt="Front desk — arrivals, departures, in-house" width="48%" />
+  &nbsp;
+  <img src="docs/screens/17-mobile-hero.jpg" alt="Mobile hero" width="23%" />
+  <img src="docs/screens/18-mobile-globe.jpg" alt="Mobile globe" width="23%" />
+  <br/><sub><b>Front desk</b> — arrivals, departures, in-house &nbsp;·&nbsp; <b>Mobile</b> — every page, zero sideways scroll</sub>
+</p>
 
 ## 🧱 &nbsp;Architecture
 
