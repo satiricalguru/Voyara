@@ -16,6 +16,12 @@
   <img alt="No API keys" src="https://img.shields.io/badge/live_data-no_API_keys-c9a04e?style=flat-square" />
 </p>
 
+<p>
+  <a href="https://voyara-peach.vercel.app"><img alt="Live demo" src="https://img.shields.io/badge/▶_Live_demo-voyara--peach.vercel.app-001489?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  &nbsp;
+  <a href="https://voyara-api.vercel.app/api/health"><img alt="API" src="https://img.shields.io/badge/API-voyara--api.vercel.app-0a1424?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+</p>
+
 <img src="docs/anim/typing.svg" alt="A trip prompt typing itself and being parsed" width="100%" />
 
 </div>
@@ -181,6 +187,34 @@ Coupons: `VOYARA10`, `WELCOME500`, `MONSOON25` (and an expired `SUMMER2024`). Pa
 | `GROQ_API_KEY` / `GEMINI_API_KEY` / `OPENAI_API_KEY` | | Optional LLM polish for themes & summaries |
 | `GOOGLE_PLACES_API_KEY`, `TAVILY_API_KEY` / `EXA_API_KEY` | | Optional richer places & context |
 | `SMTP_*` | | Optional booking emails (logged to console otherwise) |
+
+## ☁️ &nbsp;Deploy on Vercel
+
+Voyara runs on Vercel as **two projects** — the static web app and a serverless API.
+
+| Project | URL | Root | What Vercel runs |
+|---|---|---|---|
+| **voyara** (web) | [voyara-peach.vercel.app](https://voyara-peach.vercel.app) | `frontend/` | `vite build` → `dist/`, SPA rewrites, immutable caching for assets / models / textures |
+| **voyara-api** | [voyara-api.vercel.app/api](https://voyara-api.vercel.app/api/health) | `backend/` | `tsc` → `dist/`, one Node function (`api/index.js` → `src/serverless.ts`) with a cached MongoDB connection; an empty database auto-seeds on first request |
+
+**Environment variables**
+
+| Project | Variable | Value |
+|---|---|---|
+| voyara-api | `MONGODB_URI` | MongoDB Atlas connection string (serverless needs a hosted database — the in-memory dev DB can't run there) |
+| voyara-api | `JWT_SECRET` | 32+ random chars (`openssl rand -hex 32`) |
+| voyara-api | `CORS_ORIGINS`, `PUBLIC_APP_URL` | `https://voyara-peach.vercel.app` |
+| voyara-api | `NODE_ENV` | `production` |
+| voyara | `VITE_API_URL` | `https://voyara-api.vercel.app/api` |
+
+```bash
+# from backend/ and frontend/ respectively
+npx vercel link --project voyara-api      # or: --project voyara
+npx vercel env add MONGODB_URI production # paste your Atlas URI when prompted
+npx vercel deploy --prod
+```
+
+> In MongoDB Atlas → **Network Access**, allow `0.0.0.0/0` (Vercel functions don't have fixed IPs). Uploaded files live in `/tmp` on serverless, so they're ephemeral — use object storage for permanent uploads.
 
 ## 🔌 &nbsp;API
 

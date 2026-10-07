@@ -2,6 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import crypto from 'node:crypto';
 import path from 'node:path';
+import { UPLOAD_DIR } from '../config/paths.js';
 import * as c from '../controllers/misc.controller.js';
 import { authenticate } from '../middlewares/auth.js';
 import { badRequest } from '../utils/AppError.js';
@@ -10,7 +11,7 @@ const ALLOWED = /^(image\/(jpeg|png|webp|gif|avif)|application\/pdf)$/;
 
 export const uploader = multer({
   storage: multer.diskStorage({
-    destination: 'uploads',
+    destination: UPLOAD_DIR,
     filename: (_req, file, cb) => cb(null, `${Date.now().toString(36)}-${crypto.randomBytes(6).toString('hex')}${path.extname(file.originalname).toLowerCase().slice(0, 6)}`),
   }),
   limits: { fileSize: 8 * 1024 * 1024, files: 8 },

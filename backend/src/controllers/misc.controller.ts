@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { UPLOAD_DIR } from '../config/paths.js';
 import { Addon, Amenity, Coupon, Hotel, Newsletter, Wishlist } from '../models/index.js';
 import { resolveCoupon } from '../services/pricing.service.js';
 import { badRequest, notFound } from '../utils/AppError.js';
@@ -77,5 +78,5 @@ export async function upload(req: Request, res: Response) {
 }
 export async function removeUpload(filename: string) {
   const safe = path.basename(filename);
-  await fs.rm(path.resolve('uploads', safe), { force: true });
+  await fs.rm(path.join(UPLOAD_DIR, safe), { force: true });
 }

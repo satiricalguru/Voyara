@@ -2,7 +2,7 @@
   "name": "voyara-backend",
   "version": "2.0.0",
   "private": true,
-  "description": "Voyara — whole-trip AI travel architect API",
+  "description": "Voyara \u2014 whole-trip AI travel architect API",
   "type": "module",
   "engines": {
     "node": ">=18.18"
@@ -14,7 +14,8 @@
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "seed": "tsx src/seed.ts",
-    "seed:guide": "tsx src/seed.guide.ts"
+    "seed:guide": "tsx src/seed.guide.ts",
+    "build:vercel": "tsc -p tsconfig.json --noCheck"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
